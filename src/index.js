@@ -30,3 +30,12 @@ const ComposedApp = () => (
 );
 
 render(<ComposedApp />, document.getElementById("root"));
+
+// firebase.auth().onAuthStateChanged(user => {
+//   if (user) {
+//     console.log(`${user.displayName} is logged in!`);
+//     store.dispatch(login(user));
+//   } else {
+//     console.log(`logged out!`);
+//   }
+// });

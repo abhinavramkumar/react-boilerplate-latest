@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
-import { Home, PageNotFound } from "../screens";
+import { Home, PageNotFound, Login } from "../screens";
 
 const history = createHistory();
 
@@ -10,6 +10,7 @@ const AppRouter = props => {
     <Router history={history}>
       <Switch>
         <Route path="/" component={Home} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
         <Route component={PageNotFound} />
       </Switch>
     </Router>
