@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   height: 40px;
@@ -23,9 +24,31 @@ export const Row = styled.div`
 `;
 
 export const Brand = styled.div`
-  flex-basis: 100px;
-  border: 1px solid #ccc;
+  height: 100%;
+  font-family: ${props => props.theme.fonts.sans};
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 40px;
+  color: ${props => props.theme.colors.greyDark};
+  word-spacing: 2px;
+`;
+
+export const Links = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   height: 100%;
 `;
 
-export const Button = styled.button``;
+export const StyledLink = styled(Link)`
+  margin: 0;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: ${props => props.theme.colors.greyDark};
+  text-decoration: none;
+`;
