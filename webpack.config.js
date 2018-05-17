@@ -35,6 +35,7 @@ module.exports = {
     hot: true,
     inline: true,
     port: 3000,
+    stats: "minimal",
     proxy: [
       {
         path: "**",
