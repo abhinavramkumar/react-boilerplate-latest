@@ -7,7 +7,7 @@ const { debug, info, warn, error, data } = require("./utils");
 
 const app = express();
 const PORT = process.env.PORT || 9000;
-const publicPath = path.join(__dirname, "..", "dist");
+const publicPath = path.join(__dirname, "..", "public");
 
 // Express Config
 app.use(bodyParser.urlencoded({ extended: false }));

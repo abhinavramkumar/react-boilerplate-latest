@@ -3,23 +3,57 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider, injectGlobal } from "styled-components";
 import AppRouter from "./router/AppRouter";
-import { configureStore } from "./services";
 import { theme } from "./theme/theme";
+import "typeface-roboto";
+//import { LOGIN_USER, LOGOUT_USER } from "./services/constants";
+import store from "./services/store";
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
-  @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
+  * {
+    box-sizing: border-box;
+  }
 
   html {
     font-size: 16px;
   }
 
   body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.428em;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    line-height: 1.428em;
+    word-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2.25rem
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1.25rem
+  }
+  
+  h6 {
+    font-size: 0.85rem;
   }
 `;
-
-const store = configureStore();
 
 const ComposedApp = () => (
   <Provider store={store}>
@@ -29,13 +63,30 @@ const ComposedApp = () => (
   </Provider>
 );
 
-render(<ComposedApp />, document.getElementById("root"));
+const appRoot = document.getElementById("root");
+
+render(<ComposedApp />, appRoot);
+
+// render(
+//   <div>
+//     <h1>App Loaded</h1>
+//   </div>,
+//   appRoot
+// );
 
 // firebase.auth().onAuthStateChanged(user => {
 //   if (user) {
-//     console.log(`${user.displayName} is logged in!`);
-//     store.dispatch(login(user));
+//    console.log(`${user.displayName} is logged in!`);
+// store.dispatch({
+//   type: `ASYNC_${LOGIN_USER}`,
+//   payload: {
+//     user
+//   }
+// });
 //   } else {
 //     console.log(`logged out!`);
+// store.dispatch({
+//   type: `ASYNC_${LOGOUT_USER}`
+// });
 //   }
 // });

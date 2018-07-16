@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
   Wrapper,
   Container,
@@ -7,8 +8,11 @@ import {
   Image,
   Button
 } from "./styles.js";
-import { start__logIn } from "../../services";
+
+import {LOGIN_USER_AUTH} from '../../services/constants';
 import IconLogin from "./assets/login.svg";
+
+
 
 class Login extends Component {
   state = {};
@@ -21,7 +25,7 @@ class Login extends Component {
             <Form>
               <Image src={IconLogin} />
               <p>Click the button and Come on In!</p>
-              <Button onClick={start__logIn}>Login with Google</Button>
+              <Button onClick={e => this.props.loginUser()}>Login with Google</Button>
             </Form>
           </CenteredColumn>
         </Container>
@@ -30,4 +34,11 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  loginUser: () =>
+    dispatch({
+      type: `ASYNC_${LOGIN_USER_AUTH}`
+    })
+});
+
+export default connect(undefined, mapDispatchToProps)(Login);

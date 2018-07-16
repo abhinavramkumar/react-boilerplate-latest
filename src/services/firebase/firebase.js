@@ -1,9 +1,9 @@
 // import * as firebase from "firebase";
 
-// // Firebase API Config
-// // const config = {};
+// // * Firebase API Config
+// const config = {};
 
-// // firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
 // const database = firebase.database().ref("/");
 

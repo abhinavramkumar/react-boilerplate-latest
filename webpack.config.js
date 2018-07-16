@@ -17,10 +17,14 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(gif|png|jpg|jpeg|svg)$/,
+        test: /\.(gif|png|jpg|jpeg|svg|woff|woff2|ott|eot|ttf)$/,
         use: {
           loader: "file-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
