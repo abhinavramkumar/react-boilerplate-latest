@@ -7,14 +7,14 @@ import {
 } from "../constants";
 import firebase, { googleAuthProvider } from "../firebase/firebase";
 
-function* loginUser({ payload }) {
+export function* loginUser({ payload }) {
   yield put({
     type: LOGIN_USER,
     payload
   });
 }
 
-function* logoutUser() {
+export function* logoutUser() {
   yield put({
     type: LOGOUT_USER
   });
