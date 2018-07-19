@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        React Boilerplate
+      </styled.div>
+      <styled.div>
+        <Styled(Link)
+          to="/"
+        >
+          Home
+        </Styled(Link)>
+        <Styled(Link)
+          to="/login"
+        >
+          Login
+        </Styled(Link)>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
